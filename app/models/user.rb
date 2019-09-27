@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   #Associations
   has_many :questions
+
+  #Validations
+  validates :email, :first_name, :last_name, presence: true
 end
