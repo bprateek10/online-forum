@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, except: [:index, :new, :create]
 
   def index
-    @questions = Question.all
+    @questions = Question.order('created_at DESC').paginate(page: params[:page], per_page: 10)
   end
 
   def new

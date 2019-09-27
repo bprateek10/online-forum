@@ -17,3 +17,6 @@
             %tr
               %td
                 No Record Found
+  .col-sm-12.reports-Header.justify-content-end
+    #question-paginator.mb-0.paginator
+      = will_paginate @questions, 'data-turbolinks' => false, :previous_label => 'Previous', :next_label => 'Next'
