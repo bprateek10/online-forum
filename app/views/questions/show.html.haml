@@ -4,4 +4,15 @@
     = @question.content
   .col-md-8
     %h3 Comments
+    = form_for [@question, Comment.new] do |f|
+      .row
+        .col-md-8
+          .form-group
+            = f.text_area :body, placeholder: "Add a comment", class: "form-control"
+          .form-group
+            .actions
+              = f.submit "Add Comment", class: 'btn btn-primary'
+    %ul.comments-list
+      = render @question.comments
+
   

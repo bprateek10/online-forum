@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   end
   root to: 'questions#index'
 
-  resources :questions
+  resources :questions do
+    resources :comments
+  end
+
+  resources :comments do
+    resources :comments
+  end
 
 end

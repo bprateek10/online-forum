@@ -1,0 +1,12 @@
+%li
+  = comment.body
+  = form_for [comment, Comment.new] do |f|
+    .row
+      .col-md-6
+        .form-group
+          = f.text_area :body, placeholder: "Add a Reply", class: "form-control"
+        .form-group
+          .actions
+            = f.submit "Reply", class: 'btn btn-primary'
+  %ul.comments-list
+    = render comment.comments
