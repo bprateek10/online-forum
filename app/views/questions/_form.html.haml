@@ -1,0 +1,17 @@
+= form_for @question, url: form_action, html: {class: "form-horizontal center"} do |f|
+  .container.user_details
+    %h3= params[:action] == "edit" ? "Edit Question" : "Create Question"
+    .card
+      .card-body
+        .row
+          .col-md-12
+            .form-group
+              %label.pull-left
+                Question
+              = f.text_area :content, class: "form-control"
+              .field-error.server-validation
+                = show_error(f.object, :content)
+            %center
+              .form-group
+                .actions
+                  = f.submit 'Save', class: 'btn btn-primary'

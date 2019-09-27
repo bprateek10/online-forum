@@ -1,0 +1,11 @@
+%tr
+  %td
+    = link_to question_path(question), title: "Edit" do
+      = question.content
+  %td
+    - if question.user == current_user
+      =link_to edit_question_path(question), title: "Edit" do
+        %i.fa.fa-pencil
+      =link_to question_path(question), method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do
+        %i.fa.fa-trash
+

@@ -1,8 +1,41 @@
 class QuestionsController < ApplicationController
 
-  # before_action :set_question, expect: [:index]
+  before_action :set_question, except: [:index, :new, :create]
 
   def index
+    @questions = Question.all
+  end
+
+  def new
+    @question = Question.new
+  end
+
+  def create
+    @question = current_user.questions.build(question_params)
+    if @question.save
+      redirect_to questions_path, notice: 'Question was successfully created.'
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to questions_path, notice: 'Question was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def show
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to questions_path, notice: 'Question was successfully destroyed.'
   end
 
   private

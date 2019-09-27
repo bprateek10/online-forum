@@ -1,1 +1,19 @@
-hello
+.container.custom-container.container_with_top.questions-container
+  .row
+    .col-sm-6
+      %h2 Questions
+  .option-section.new-resource-section.d-flex
+    = link_to "Add New Question", new_question_path(@question), class: 'btn btn-primary'
+  .report_data_table
+    %table.table.table-striped#questions-table.auto_width
+      %thead
+        %tr
+          %th Question
+          %th Action
+        %tbody
+          - if @questions.present?
+            = render partial: 'question_data',  :collection => @questions, :as => :question
+          - else
+            %tr
+              %td
+                No Record Found
