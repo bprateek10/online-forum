@@ -22,7 +22,7 @@ Run following commands on terminal in your root directory
     $ gem install bundler
     $ bundle install
 
-## Step 4 - Create Database
+## Step 4 - Create database
 
 Create database.yml file in config folder and paste following into it with your porstgres credentials
 
@@ -65,5 +65,5 @@ You can run Rails server by running following command in terminal on root direct
 
     $ rails server
 
-Now the application is running on http://localhost:3000
+Now the application is running on http://localhost:3000.
 You can use the credentials of the test user created in seed file
