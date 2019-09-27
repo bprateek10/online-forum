@@ -1,12 +1,12 @@
 %li
   = comment.body
-  = form_for [comment, Comment.new] do |f|
+  = form_for [comment, Comment.new], html: {class: "form-horizontal comment-form"} do |f|
     .row
       .col-md-6
         .form-group
-          = f.text_area :body, placeholder: "Add a Reply", class: "form-control"
+          = f.text_area :body, placeholder: "Add a Reply", class: "form-control comment-text"
         .form-group
           .actions
-            = f.submit "Reply", class: 'btn btn-primary'
+            = f.submit "Reply", class: 'btn btn-primary', disabled: true
   %ul.comments-list
     = render comment.comments

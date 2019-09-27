@@ -1,4 +1,4 @@
-= form_for @question, url: form_action, html: {class: "form-horizontal center"} do |f|
+= form_for @question, url: form_action, html: {class: "form-horizontal center question-form"} do |f|
   .container.user_details
     %h3= params[:action] == "edit" ? "Edit Question" : "Create Question"
     .card
