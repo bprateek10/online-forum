@@ -17,5 +17,6 @@
                 = f.label :remember_me, 'Remember Password', class: 'form-check-label'
           .actions
             = f.submit 'Log in', class: 'btn btn-primary btn-block'
+            = link_to "Sign up", new_registration_path(resource_name), class: 'btn btn-info mt-2 w-100'
   :javascript
     $(".alert" ).fadeOut(5000);

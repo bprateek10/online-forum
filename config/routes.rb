@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'devise/sessions#new'
     end
   end
   root to: 'questions#index'
