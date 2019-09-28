@@ -27,11 +27,11 @@ Run following commands on terminal in your root directory
 Create database.yml file in config folder and paste following into it with your porstgres credentials
 
     default: &default
-    adapter: postgresql
-    pool: 5
-    username: #{YOUR POSTGRES USERNAME}
-    password: #{YOUR POSTGRES PASSWORD}
-    timeout: 5000
+      adapter: postgresql
+      pool: 5
+      username: #{YOUR POSTGRES USERNAME}
+      password: #{YOUR POSTGRES PASSWORD}
+      timeout: 5000
 
     test:
       <<: *default
