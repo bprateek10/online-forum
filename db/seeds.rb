@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-puts "====Starting seeding data"
+puts "====Starting seeding data======"
 user1 = User.new(first_name: "aman", last_name: "sharma", email: "aman@yopmail.com", password: "pass1234")
 
 if user1.save
@@ -22,4 +22,4 @@ if user2.save
   question.save
 end
 
-puts "====Seeding data completed successfully!"
+puts "====Seeding data completed successfully!========"
